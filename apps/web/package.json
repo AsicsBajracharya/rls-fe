@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean": "rm -rf .next && rm -rf dist && rm -rf build && rm -rf storybook-static && rm -rf coverage && rm -rf .nyc_output"
   },
   "dependencies": {
     "@rls/ui": "workspace:*",

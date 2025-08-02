@@ -17,6 +17,9 @@
     },
     "build-storybook": {
       "outputs": ["storybook-static/**"]
+    },
+    "clean": {
+      "cache": false
     }
   }
 } 

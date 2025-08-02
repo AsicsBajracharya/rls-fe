@@ -12,7 +12,10 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "storybook": "turbo run storybook",
-    "build-storybook": "turbo run build-storybook"
+    "build-storybook": "turbo run build-storybook",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf build && rm -rf storybook-static && rm -rf coverage && rm -rf .nyc_output && rm -rf .pnpm-store",
+    "clean:install": "pnpm clean && pnpm install",
+    "clean:all": "pnpm clean && pnpm install && pnpm build"
   },
   "devDependencies": {
     "@turbo/gen": "^1.12.4",

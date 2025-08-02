@@ -89,6 +89,9 @@ The application will be available at [http://localhost:3000](http://localhost:30
 - `pnpm format` - Format code with Prettier
 - `pnpm storybook` - Start Storybook
 - `pnpm build-storybook` - Build Storybook for production
+- `pnpm clean` - Clean all build artifacts and caches
+- `pnpm clean:install` - Clean and reinstall dependencies
+- `pnpm clean:all` - Clean, install, and build everything
 
 ### Web App (apps/web)
 - `pnpm dev` - Start Next.js development server
@@ -97,6 +100,41 @@ The application will be available at [http://localhost:3000](http://localhost:30
 - `pnpm lint` - Lint TypeScript and ESLint
 - `pnpm storybook` - Start Storybook
 - `pnpm build-storybook` - Build Storybook
+- `pnpm clean` - Clean build artifacts
+
+### UI Package (packages/ui)
+- `pnpm lint` - Lint TypeScript and ESLint
+- `pnpm generate:component` - Generate new React components
+- `pnpm clean` - Clean build artifacts
+
+## 🧹 Cleaning and Maintenance
+
+### Clean Scripts
+
+The project includes comprehensive clean scripts to help maintain a clean development environment:
+
+```bash
+# Clean all build artifacts and caches
+pnpm clean
+
+# Clean and reinstall dependencies
+pnpm clean:install
+
+# Clean, install, and build everything
+pnpm clean:all
+```
+
+### What Gets Cleaned
+
+- `node_modules/` - All dependency directories
+- `.next/` - Next.js build cache
+- `.turbo/` - Turborepo cache
+- `dist/` - Build outputs
+- `build/` - Build artifacts
+- `storybook-static/` - Storybook build output
+- `coverage/` - Test coverage reports
+- `.nyc_output/` - NYC coverage output
+- `.pnpm-store/` - pnpm store cache
 
 ## 🎨 UI Components
 
