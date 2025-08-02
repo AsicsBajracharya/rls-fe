@@ -1,7 +1,6 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@rls/ui';
 import { useAppSelector, useAppDispatch } from '@/lib/store';
 import { increment, decrement, incrementByAmount } from '@/lib/slices/counterSlice';
 

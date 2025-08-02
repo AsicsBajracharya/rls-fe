@@ -23,13 +23,18 @@ rls/
 │   └── web/                 # Next.js application
 │       ├── src/
 │       │   ├── app/         # App Router pages
-│       │   ├── components/  # React components
+│       │   ├── components/  # App-specific components
 │       │   ├── lib/         # Utilities and configurations
 │       │   └── hooks/       # Custom React hooks
 │       ├── .storybook/      # Storybook configuration
 │       └── public/          # Static assets
 ├── packages/
-│   ├── ui/                  # Shared UI components
+│   ├── ui/                  # Shared UI components (shadcn/ui)
+│   │   ├── src/
+│   │   │   ├── components/  # Reusable UI components
+│   │   │   ├── utils.ts     # Utility functions
+│   │   │   └── index.css    # Global styles
+│   │   └── components.json  # shadcn/ui configuration
 │   └── config/              # Shared configurations
 ├── turbo.json              # Turborepo configuration
 ├── pnpm-workspace.yaml     # pnpm workspace configuration
@@ -95,17 +100,29 @@ The application will be available at [http://localhost:3000](http://localhost:30
 
 ## 🎨 UI Components
 
-The project uses shadcn/ui for consistent, accessible components. Available components include:
+The project uses a shared UI package (`@rls/ui`) for consistent, accessible components across all applications. Available components include:
 
 - Button
 - Card
 - Badge
+- Input
 - And more...
 
-To add new components:
+### Adding New Components
+
+To add new components to the shared UI package:
+
 ```bash
-cd apps/web
+cd packages/ui
 pnpm dlx shadcn@latest add <component-name>
+```
+
+### Using Components in Apps
+
+Import components from the shared UI package:
+
+```typescript
+import { Button, Card, Badge } from '@rls/ui';
 ```
 
 ## 📖 Storybook
@@ -164,16 +181,17 @@ pnpm test:coverage
 - `web`: Main Next.js application
 
 ### Packages
-- `ui`: Shared UI components library
+- `ui`: Shared UI components library (shadcn/ui)
 - `config`: Shared configurations (ESLint, TypeScript)
 
 ## 🔄 Development Workflow
 
-1. **Feature Development**: Create components in `apps/web/src/components/`
-2. **State Management**: Add Redux slices in `apps/web/src/lib/slices/`
-3. **API Integration**: Create React Query hooks in `apps/web/src/lib/hooks/`
-4. **Documentation**: Add Storybook stories for components
-5. **Testing**: Write unit tests with Vitest
+1. **UI Components**: Add shared components in `packages/ui/src/components/`
+2. **App Development**: Create app-specific components in `apps/web/src/components/`
+3. **State Management**: Add Redux slices in `apps/web/src/lib/slices/`
+4. **API Integration**: Create React Query hooks in `apps/web/src/lib/hooks/`
+5. **Documentation**: Add Storybook stories for components
+6. **Testing**: Write unit tests with Vitest
 
 ## 🚀 Deployment
 
