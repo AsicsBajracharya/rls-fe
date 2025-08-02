@@ -32,6 +32,7 @@ rls/
 │   ├── ui/                  # Shared UI components
 │   └── config/              # Shared configurations
 ├── turbo.json              # Turborepo configuration
+├── pnpm-workspace.yaml     # pnpm workspace configuration
 └── package.json            # Root package.json
 ```
 
@@ -45,14 +46,14 @@ rls/
   - React Query (server state)
 - **Testing**: Vitest + Storybook
 - **Build Tool**: Turborepo
-- **Package Manager**: npm
+- **Package Manager**: pnpm
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js 18+ 
-- npm 9+
+- pnpm 8+
 
 ### Installation
 
@@ -64,12 +65,12 @@ cd rls
 
 2. Install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 3. Start the development server:
 ```bash
-npm run dev
+pnpm dev
 ```
 
 The application will be available at [http://localhost:3000](http://localhost:3000).
@@ -77,20 +78,20 @@ The application will be available at [http://localhost:3000](http://localhost:30
 ## 📚 Available Scripts
 
 ### Root Level
-- `npm run dev` - Start all applications in development mode
-- `npm run build` - Build all applications
-- `npm run lint` - Lint all packages
-- `npm run format` - Format code with Prettier
-- `npm run storybook` - Start Storybook
-- `npm run build-storybook` - Build Storybook for production
+- `pnpm dev` - Start all applications in development mode
+- `pnpm build` - Build all applications
+- `pnpm lint` - Lint all packages
+- `pnpm format` - Format code with Prettier
+- `pnpm storybook` - Start Storybook
+- `pnpm build-storybook` - Build Storybook for production
 
 ### Web App (apps/web)
-- `npm run dev` - Start Next.js development server
-- `npm run build` - Build Next.js application
-- `npm run start` - Start production server
-- `npm run lint` - Lint TypeScript and ESLint
-- `npm run storybook` - Start Storybook
-- `npm run build-storybook` - Build Storybook
+- `pnpm dev` - Start Next.js development server
+- `pnpm build` - Build Next.js application
+- `pnpm start` - Start production server
+- `pnpm lint` - Lint TypeScript and ESLint
+- `pnpm storybook` - Start Storybook
+- `pnpm build-storybook` - Build Storybook
 
 ## 🎨 UI Components
 
@@ -104,7 +105,7 @@ The project uses shadcn/ui for consistent, accessible components. Available comp
 To add new components:
 ```bash
 cd apps/web
-npx shadcn@latest add <component-name>
+pnpm dlx shadcn@latest add <component-name>
 ```
 
 ## 📖 Storybook
@@ -112,7 +113,7 @@ npx shadcn@latest add <component-name>
 Storybook is configured for component development and documentation:
 
 ```bash
-npm run storybook
+pnpm storybook
 ```
 
 Visit [http://localhost:6006](http://localhost:6006) to view your components in isolation.
@@ -151,10 +152,10 @@ The project includes Vitest for unit testing and Storybook for component testing
 
 ```bash
 # Run tests
-npm run test
+pnpm test
 
 # Run tests with coverage
-npm run test:coverage
+pnpm test:coverage
 ```
 
 ## 📦 Monorepo Structure

@@ -6,6 +6,10 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# pnpm
+.pnpm-store/
+pnpm-lock.yaml
+
 # Runtime data
 pids
 *.pid
@@ -160,7 +164,6 @@ playwright/.cache/
 # Package manager files
 package-lock.json
 yarn.lock
-pnpm-lock.yaml
 
 # IDE files
 .vscode/settings.json
